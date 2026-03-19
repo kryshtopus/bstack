@@ -1,0 +1,10 @@
+export const APP_NAME = 'browserstack-app-automate-cli';
+export const KEYTAR_SERVICE = 'browserstack-app-automate-cli';
+export const CONFIG_BASENAME = 'config.json';
+export const ENCRYPTED_SESSION_BASENAME = 'session.enc';
+export const PLAIN_SESSION_BASENAME = 'session.json';
+export const LAST_RESPONSE_BASENAME = 'last-response.json';
+export const DEFAULT_BASE_URL = 'https://api-cloud.browserstack.com';
+export const DEFAULT_HTTP_TIMEOUT_MS = 30_000;
+export const DEFAULT_RETRY_ATTEMPTS = 3;
+export const MAX_EXPORT_BYTES = 10 * 1024 * 1024;

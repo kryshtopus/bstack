@@ -1,0 +1,84 @@
+{
+  "name": "browserstack-app-automate-cli",
+  "version": "1.0.0",
+  "description": "BrowserStack App Automate SDK and CLI for interactive and scripted REST API management.",
+  "bin": {
+    "bsaa": "dist/bin.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "clean": "node ./scripts/clean.mjs",
+    "build": "npm run clean && tsc -p tsconfig.json && node ./scripts/postbuild.mjs",
+    "dev": "tsx src/bin.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src scripts eslint.config.js",
+    "format": "prettier --write .",
+    "test": "npm run test:unit",
+    "test:unit": "vitest run",
+    "test:integration": "node ./scripts/pack-check.mjs",
+    "test:watch": "vitest",
+    "pack:check": "node ./scripts/pack-check.mjs",
+    "publish:dry": "npm publish --dry-run",
+    "prepublishOnly": "npm run typecheck && npm run lint && npm run test && npm run build"
+  },
+  "keywords": [
+    "browserstack",
+    "cli",
+    "sdk",
+    "app-automate",
+    "automation",
+    "appium",
+    "xcuitest",
+    "espresso",
+    "maestro",
+    "typescript"
+  ],
+  "author": "Open Source Contributors",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.20.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@inquirer/prompts": "^8.3.2",
+    "axios": "^1.13.6",
+    "cli-table3": "^0.6.5",
+    "commander": "^14.0.3",
+    "dotenv": "^17.3.1",
+    "env-paths": "^4.0.0",
+    "form-data": "^4.0.5",
+    "mime-types": "^3.0.2",
+    "ora": "^9.3.0",
+    "picocolors": "^1.1.1",
+    "zod": "^4.3.6"
+  },
+  "optionalDependencies": {
+    "keytar": "^7.9.0"
+  },
+  "devDependencies": {
+    "@types/mime-types": "^3.0.1",
+    "@types/node": "^25.5.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.1",
+    "@typescript-eslint/parser": "^8.57.1",
+    "eslint": "^10.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
+  }
+}
