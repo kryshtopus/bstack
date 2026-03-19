@@ -41,7 +41,7 @@
     "maestro",
     "typescript"
   ],
-  "author": "Open Source Contributors",
+  "author": "Kryshtopenko Dmytro <kryhstopenko.dmytro@gmail.com>",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
