@@ -1,5 +1,5 @@
 {
-  "name": "@kryshtopus/bstack",
+  "name": "@kryshtop/bstack",
   "version": "1.0.0",
   "description": "bstack: BrowserStack App Automate SDK and CLI for interactive and scripted REST API management.",
   "bin": {
@@ -45,11 +45,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kryshtopus/bstack.git"
+    "url": "git+https://github.com/kryshtop/bstack.git"
   },
-  "homepage": "https://github.com/kryshtopus/bstack#readme",
+  "homepage": "https://github.com/kryshtop/bstack#readme",
   "bugs": {
-    "url": "https://github.com/kryshtopus/bstack/issues"
+    "url": "https://github.com/kryshtop/bstack/issues"
   },
   "type": "module",
   "sideEffects": false,

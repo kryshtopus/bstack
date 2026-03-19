@@ -2,13 +2,13 @@
 
 BrowserStack App Automate SDK and CLI for uploads, builds, sessions, and media workflows.
 
-[![Build](https://github.com/kryshtopus/bstack/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/kryshtopus/bstack/actions/workflows/build.yml)
-[![Tests](https://github.com/kryshtopus/bstack/actions/workflows/unit-tests.yml/badge.svg?branch=main)](https://github.com/kryshtopus/bstack/actions/workflows/unit-tests.yml)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)](https://github.com/kryshtopus/bstack/blob/main/package.json)
-[![GitHub Stars](https://img.shields.io/badge/stars-view%20on%20GitHub-181717?style=flat-square&logo=github)](https://github.com/kryshtopus/bstack/stargazers)
-[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/kryshtopus/bstack/blob/main/LICENSE)
+[![Build](https://github.com/kryshtop/bstack/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/kryshtop/bstack/actions/workflows/build.yml)
+[![Tests](https://github.com/kryshtop/bstack/actions/workflows/unit-tests.yml/badge.svg?branch=main)](https://github.com/kryshtop/bstack/actions/workflows/unit-tests.yml)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)](https://github.com/kryshtop/bstack/blob/main/package.json)
+[![GitHub Stars](https://img.shields.io/badge/stars-view%20on%20GitHub-181717?style=flat-square&logo=github)](https://github.com/kryshtop/bstack/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/kryshtop/bstack/blob/main/LICENSE)
 
-`@kryshtopus/bstack` is a CLI-first BrowserStack App Automate package that ships both:
+`@kryshtop/bstack` is a CLI-first BrowserStack App Automate package that ships both:
 
 - a CLI binary: `bstack`
 - a TypeScript/JavaScript SDK for registry-driven BrowserStack App Automate API access
@@ -32,14 +32,14 @@ It is designed for local operator workflows and CI scripting. In most cases you 
 ### Recommended: global CLI usage
 
 ```bash
-npm install -g @kryshtopus/bstack
+npm install -g @kryshtop/bstack
 bstack --help
 ```
 
 ### Project-local CLI usage
 
 ```bash
-npm install -D @kryshtopus/bstack
+npm install -D @kryshtop/bstack
 npx bstack --help
 ```
 
@@ -47,7 +47,7 @@ npx bstack --help
 
 ```bash
 npm pack
-npm install -D ./kryshtopus-bstack-1.0.0.tgz
+npm install -D ./kryshtop-bstack-1.0.0.tgz
 ```
 
 ## Quick Start
@@ -63,7 +63,7 @@ bstack appium apps list
 If installed locally instead of globally:
 
 ```bash
-npx @kryshtopus/bstack --help
+npx @kryshtop/bstack --help
 ```
 
 ### SDK
@@ -76,7 +76,7 @@ import {
   EndpointRegistry,
   ResourceService,
   endpointDefinitions,
-} from '@kryshtopus/bstack';
+} from '@kryshtop/bstack';
 
 const registry = new EndpointRegistry(endpointDefinitions);
 const http = new BrowserStackHttpClient({
@@ -321,4 +321,4 @@ The requested command may not be available for that framework. Check `bstack hel
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=kryshtopus/bstack&type=Date)](https://www.star-history.com/#kryshtopus/bstack&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=kryshtop/bstack&type=Date)](https://www.star-history.com/#kryshtop/bstack&Date)
