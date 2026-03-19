@@ -3,6 +3,9 @@ name: Publish to npm
 on:
   workflow_dispatch:
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   verify:
     name: Verify
@@ -11,6 +14,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Sync git remote URL
+        run: git remote set-url origin "https://github.com/${GITHUB_REPOSITORY}.git"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -39,6 +45,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Sync git remote URL
+        run: git remote set-url origin "https://github.com/${GITHUB_REPOSITORY}.git"
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -63,6 +72,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Sync git remote URL
+        run: git remote set-url origin "https://github.com/${GITHUB_REPOSITORY}.git"
 
       - name: Setup Node.js
         uses: actions/setup-node@v4

@@ -43,6 +43,14 @@
   ],
   "author": "Kryshtopenko Dmytro <kryhstopenko.dmytro@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kryshtopus/bstack.git"
+  },
+  "homepage": "https://github.com/kryshtopus/bstack#readme",
+  "bugs": {
+    "url": "https://github.com/kryshtopus/bstack/issues"
+  },
   "type": "module",
   "sideEffects": false,
   "engines": {

@@ -2,11 +2,11 @@
 
 BrowserStack App Automate SDK and CLI for uploads, builds, sessions, and media workflows.
 
-[![Build](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/build.yml)
-[![Tests](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/unit-tests.yml/badge.svg?branch=main)](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/unit-tests.yml)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)](https://github.com/kryshtopus/browserstack-cli-client/blob/main/package.json)
-[![GitHub Stars](https://img.shields.io/badge/stars-view%20on%20GitHub-181717?style=flat-square&logo=github)](https://github.com/kryshtopus/browserstack-cli-client/stargazers)
-[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/kryshtopus/browserstack-cli-client/blob/main/LICENSE)
+[![Build](https://github.com/kryshtopus/bstack/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/kryshtopus/bstack/actions/workflows/build.yml)
+[![Tests](https://github.com/kryshtopus/bstack/actions/workflows/unit-tests.yml/badge.svg?branch=main)](https://github.com/kryshtopus/bstack/actions/workflows/unit-tests.yml)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)](https://github.com/kryshtopus/bstack/blob/main/package.json)
+[![GitHub Stars](https://img.shields.io/badge/stars-view%20on%20GitHub-181717?style=flat-square&logo=github)](https://github.com/kryshtopus/bstack/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/kryshtopus/bstack/blob/main/LICENSE)
 
 `@kryshtopus/bstack` is a CLI-first BrowserStack App Automate package that ships both:
 
@@ -321,4 +321,4 @@ The requested command may not be available for that framework. Check `bstack hel
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=kryshtopus/browserstack-cli-client&type=Date)](https://www.star-history.com/#kryshtopus/browserstack-cli-client&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=kryshtopus/bstack&type=Date)](https://www.star-history.com/#kryshtopus/bstack&Date)
