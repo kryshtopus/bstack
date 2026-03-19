@@ -34,7 +34,7 @@ export class CommandRuntime {
   public async requireSession(): Promise<StoredSession> {
     const { session } = await this.auth.getActiveSession(this.options.masterKey);
     if (!session) {
-      throw new Error('No saved BrowserStack session found. Run `bsaa login` first.');
+      throw new Error('No saved BrowserStack session found. Run `bstack auth login` first.');
     }
 
     return session;

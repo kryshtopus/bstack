@@ -16,7 +16,7 @@ describe('buildMultipartPayload', () => {
   });
 
   it('builds multipart data for file uploads and custom fields', async () => {
-    const dir = await mkdtemp(path.join(os.tmpdir(), 'bsaa-multipart-'));
+    const dir = await mkdtemp(path.join(os.tmpdir(), 'bstack-multipart-'));
     cleanupPaths.push(dir);
     const filePath = path.join(dir, 'sample.apk');
     await writeFile(filePath, 'sample');

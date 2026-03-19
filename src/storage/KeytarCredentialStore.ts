@@ -3,7 +3,7 @@ import { KEYTAR_SERVICE } from '../utils/constants.js';
 
 import type { CredentialStore } from './CredentialStore.js';
 
-const ACCOUNT_NAME = 'browserstack-app-automate-cli';
+const ACCOUNT_NAME = 'bstack';
 
 interface KeytarModule {
   getPassword(service: string, account: string): Promise<string | null>;

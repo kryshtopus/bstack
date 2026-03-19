@@ -1,9 +1,9 @@
 {
-  "name": "browserstack-app-automate-cli",
+  "name": "@kryshtopus/bstack",
   "version": "1.0.0",
-  "description": "BrowserStack App Automate SDK and CLI for interactive and scripted REST API management.",
+  "description": "bstack: BrowserStack App Automate SDK and CLI for interactive and scripted REST API management.",
   "bin": {
-    "bsaa": "dist/bin.js"
+    "bstack": "dist/bin.js"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -23,10 +23,10 @@
     "format": "prettier --write .",
     "test": "npm run test:unit",
     "test:unit": "vitest run",
-    "test:integration": "node ./scripts/pack-check.mjs",
+    "test:integration": "npm run build && node ./scripts/pack-check.mjs",
     "test:watch": "vitest",
-    "pack:check": "node ./scripts/pack-check.mjs",
-    "publish:dry": "npm publish --dry-run",
+    "pack:check": "npm run build && node ./scripts/pack-check.mjs",
+    "publish:dry": "npm run build && npm publish --dry-run",
     "prepublishOnly": "npm run typecheck && npm run lint && npm run test && npm run build"
   },
   "keywords": [

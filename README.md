@@ -1,11 +1,19 @@
-# browserstack-app-automate-cli
+# bstack
 
-`browserstack-app-automate-cli` is an ESM-first BrowserStack App Automate package that ships both:
+BrowserStack App Automate SDK and CLI for uploads, builds, sessions, and media workflows.
 
-- a CLI binary: `bsaa`
+[![Build](https://img.shields.io/github/actions/workflow/status/kryshtopus/browserstack-cli-client/build.yml?branch=main&style=flat-square&label=build)](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/build.yml)
+[![Tests](https://img.shields.io/github/actions/workflow/status/kryshtopus/browserstack-cli-client/unit-tests.yml?branch=main&style=flat-square&label=tests)](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/unit-tests.yml)
+[![Version](https://img.shields.io/github/package-json/v/kryshtopus/browserstack-cli-client?style=flat-square)](https://github.com/kryshtopus/browserstack-cli-client/blob/main/package.json)
+[![GitHub Stars](https://img.shields.io/github/stars/kryshtopus/browserstack-cli-client?style=flat-square)](https://github.com/kryshtopus/browserstack-cli-client/stargazers)
+[![License](https://img.shields.io/github/license/kryshtopus/browserstack-cli-client?style=flat-square)](https://github.com/kryshtopus/browserstack-cli-client/blob/main/LICENSE)
+
+`@kryshtopus/bstack` is a CLI-first BrowserStack App Automate package that ships both:
+
+- a CLI binary: `bstack`
 - a TypeScript/JavaScript SDK for registry-driven BrowserStack App Automate API access
 
-It is designed for local operator workflows, CI scripting, and library consumption from Node.js projects.
+It is designed for local operator workflows and CI scripting. In most cases you should install it globally, or as a project-local `devDependency` when you want a pinned CLI version inside a repository. The package also exposes an SDK surface for advanced programmatic use, but it is primarily intended as an operator utility rather than a runtime dependency of application packages.
 
 ## Features
 
@@ -13,8 +21,6 @@ It is designed for local operator workflows, CI scripting, and library consumpti
 - Scriptable command mode for CI and shell automation
 - SDK exports for HTTP client, registry, services, normalizers, and types
 - Local credential persistence with OS keychain preference
-- Safe npm packaging with dist-only publish output
-- Local tarball validation for pre-publish checks
 
 ## Requirements
 
@@ -23,24 +29,25 @@ It is designed for local operator workflows, CI scripting, and library consumpti
 
 ## Installation
 
-### Library / local CLI usage
+### Recommended: global CLI usage
 
 ```bash
-npm install browserstack-app-automate-cli
+npm install -g @kryshtopus/bstack
+bstack --help
 ```
 
-### Global CLI usage
+### Project-local CLI usage
 
 ```bash
-npm install -g browserstack-app-automate-cli
-bsaa --help
+npm install -D @kryshtopus/bstack
+npx bstack --help
 ```
 
 ### From a local tarball
 
 ```bash
 npm pack
-npm install ./browserstack-app-automate-cli-1.0.0.tgz
+npm install -D ./kryshtopus-bstack-1.0.0.tgz
 ```
 
 ## Quick Start
@@ -48,18 +55,20 @@ npm install ./browserstack-app-automate-cli-1.0.0.tgz
 ### CLI
 
 ```bash
-bsaa auth login
-bsaa auth status
-bsaa appium apps list
+bstack auth login
+bstack auth status
+bstack appium apps list
 ```
 
 If installed locally instead of globally:
 
 ```bash
-npx bsaa --help
+npx @kryshtopus/bstack --help
 ```
 
 ### SDK
+
+If you intentionally want to use the package programmatically, install it in the way that matches your project policy. For CLI-only use, prefer the global or `devDependency` installs above.
 
 ```ts
 import {
@@ -67,7 +76,7 @@ import {
   EndpointRegistry,
   ResourceService,
   endpointDefinitions,
-} from 'browserstack-app-automate-cli';
+} from '@kryshtopus/bstack';
 
 const registry = new EndpointRegistry(endpointDefinitions);
 const http = new BrowserStackHttpClient({
@@ -90,13 +99,13 @@ console.log(builds);
 Run with no subcommand:
 
 ```bash
-bsaa
+bstack
 ```
 
 or explicitly:
 
 ```bash
-bsaa menu
+bstack menu
 ```
 
 ### Command mode
@@ -113,15 +122,15 @@ Global options:
 Examples:
 
 ```bash
-bsaa auth login
-bsaa auth validate
-bsaa auth status --json
-bsaa appium apps upload ./MyApp.apk --custom-id SampleApp
-bsaa appium builds list --status running
-bsaa maestro suites upload ./maestro-suite.zip
-bsaa xcuitest sessions get <sessionId> --build <buildId>
-bsaa media upload ./fixtures/profile.png
-bsaa explorer
+bstack auth login
+bstack auth validate
+bstack auth status --json
+bstack appium apps upload ./MyApp.apk --custom-id SampleApp
+bstack appium builds list --status running
+bstack maestro suites upload ./maestro-suite.zip
+bstack xcuitest sessions get <sessionId> --build <buildId>
+bstack media upload ./fixtures/profile.png
+bstack explorer
 ```
 
 ## SDK Exports
@@ -162,20 +171,20 @@ Supported sources:
 Interactive:
 
 ```bash
-bsaa auth login
+bstack auth login
 ```
 
 Non-interactive:
 
 ```bash
-bsaa auth login --username "$BSAA_USERNAME" --access-key "$BSAA_ACCESS_KEY"
+bstack auth login --username "$BSAA_USERNAME" --access-key "$BSAA_ACCESS_KEY"
 ```
 
 Encrypted local storage:
 
 ```bash
 export BSAA_MASTER_KEY='choose-a-strong-local-master-key'
-bsaa auth login \
+bstack auth login \
   --username "$BSAA_USERNAME" \
   --access-key "$BSAA_ACCESS_KEY" \
   --storage encrypted-file
@@ -184,7 +193,7 @@ bsaa auth login \
 Plain-text storage is explicit only:
 
 ```bash
-bsaa auth login \
+bstack auth login \
   --username "$BSAA_USERNAME" \
   --access-key "$BSAA_ACCESS_KEY" \
   --storage plain-file \
@@ -215,8 +224,8 @@ Storage order for `--storage auto`:
 
 Typical user config locations:
 
-- macOS: `~/Library/Application Support/browserstack-app-automate-cli`
-- Linux: `~/.config/browserstack-app-automate-cli`
+- macOS: `~/Library/Application Support/bstack`
+- Linux: `~/.config/bstack`
 
 Persisted files may include:
 
@@ -286,111 +295,12 @@ Media uploads return BrowserStack `media_url` values that you can plug into fram
 
 The package preserves raw BrowserStack responses instead of forcing a guessed capability abstraction.
 
-## Development
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Useful commands:
-
-```bash
-npm run clean
-npm run typecheck
-npm run lint
-npm test
-npm run build
-npm run pack:check
-```
-
-Local development CLI:
-
-```bash
-npm run dev -- --help
-```
-
-## Testing
-
-Current automated checks cover:
-
-- auth header generation
-- session persistence
-- endpoint registry resolution
-- query parameter building
-- multipart request building
-- response normalization
-- command handler behavior
-- error object behavior
-
-Integration-style packaging validation is provided by:
-
-```bash
-npm run pack:check
-```
-
-That script:
-
-- creates an npm tarball
-- checks tarball contents
-- installs the tarball into a temporary local project
-- verifies SDK importability
-- installs the tarball into a temporary global prefix
-- verifies the `bsaa` binary
-
-## Publishing Notes
-
-### Maintainer release flow
-
-```bash
-npm login
-npm whoami
-npm version patch
-npm run prepublishOnly
-npm publish --access public
-```
-
-Use `minor` or `major` instead of `patch` as needed.
-
-### Dry run
-
-```bash
-npm run publish:dry
-```
-
-### Manual tarball inspection
-
-```bash
-npm pack
-tar -tf browserstack-app-automate-cli-1.0.0.tgz
-```
-
-### Manual local install test
-
-```bash
-npm pack
-mkdir -p /tmp/bsaa-local-test
-cd /tmp/bsaa-local-test
-npm install /path/to/browserstack-app-automate-cli-1.0.0.tgz
-node --input-type=module -e "import { EndpointRegistry } from 'browserstack-app-automate-cli'; console.log(Boolean(EndpointRegistry))"
-```
-
-### Manual global install test
-
-```bash
-npm pack
-mkdir -p /tmp/bsaa-global-prefix
-npm install -g --prefix /tmp/bsaa-global-prefix /path/to/browserstack-app-automate-cli-1.0.0.tgz
-/tmp/bsaa-global-prefix/bin/bsaa --help
-```
-
 ## Troubleshooting
 
 ### No saved session found
 
 ```bash
-bsaa auth login
+bstack auth login
 ```
 
 ### Keychain support unavailable
@@ -398,7 +308,7 @@ bsaa auth login
 Use encrypted-file storage with a master key:
 
 ```bash
-bsaa auth login --storage encrypted-file --master-key '<key>'
+bstack auth login --storage encrypted-file --master-key '<key>'
 ```
 
 ### Encrypted session cannot be decrypted
@@ -407,14 +317,8 @@ Set the same `BSAA_MASTER_KEY` used when the session was created, or log in agai
 
 ### Unsupported operation
 
-The CLI command surface is driven by the endpoint registry. Extend `src/api/registry/definitions.ts` when BrowserStack adds a new documented operation.
+The requested command may not be available for that framework. Check `bstack help-frameworks` to see the currently supported operations.
 
-## Maintainer Notes
+## Star History
 
-This package is intentionally ESM-first. If dual ESM/CJS support is ever required, add it deliberately instead of mixing incompatible entrypoint conventions.
-
-Current known modeling choices:
-
-- Appium uses legacy v1 endpoints.
-- Detox Android is intentionally modeled as currently documented, without inventing a separate builds resource.
-- Some newer framework session lists are derived from build detail responses because BrowserStack documents session detail endpoints more clearly than standalone list endpoints.
+[![Star History Chart](https://api.star-history.com/svg?repos=kryshtopus/browserstack-cli-client&type=Date)](https://www.star-history.com/#kryshtopus/browserstack-cli-client&Date)

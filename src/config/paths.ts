@@ -9,7 +9,7 @@ import {
 } from '../utils/constants.js';
 
 function resolvePaths() {
-  return envPaths('browserstack-app-automate-cli', { suffix: '' });
+  return envPaths('bstack', { suffix: '' });
 }
 
 export function getConfigDir(): string {

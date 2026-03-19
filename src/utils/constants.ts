@@ -1,5 +1,5 @@
-export const APP_NAME = 'browserstack-app-automate-cli';
-export const KEYTAR_SERVICE = 'browserstack-app-automate-cli';
+export const APP_NAME = 'bstack';
+export const KEYTAR_SERVICE = 'bstack';
 export const CONFIG_BASENAME = 'config.json';
 export const ENCRYPTED_SESSION_BASENAME = 'session.enc';
 export const PLAIN_SESSION_BASENAME = 'session.json';

@@ -10,7 +10,7 @@ describe('SessionRepository', () => {
   });
 
   it('persists and reloads plain-file sessions in the user config directory', async () => {
-    const configRoot = await mkdtemp(path.join(os.tmpdir(), 'bsaa-config-'));
+    const configRoot = await mkdtemp(path.join(os.tmpdir(), 'bstack-config-'));
     process.env.XDG_CONFIG_HOME = configRoot;
 
     const { SessionRepository } = await import('../storage/SessionRepository.js');

@@ -1131,7 +1131,7 @@ async function runHelpScreen(runtime: CommandRuntime): Promise<void> {
     '- Stored credentials live outside the repository root',
     '',
     'Switching to command mode:',
-    '- Use `bsaa --help` for non-interactive commands',
+    '- Use `bstack --help` for non-interactive commands',
     '- Useful for CI, shell history, and repeatable automation',
     '',
     'Debugging:',

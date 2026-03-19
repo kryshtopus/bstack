@@ -12,7 +12,7 @@ export function createProgram(runtime: CommandRuntime): Command {
   const program = new Command();
 
   program
-    .name('bsaa')
+    .name('bstack')
     .description('BrowserStack App Automate CLI utility')
     .version('1.0.0')
     .option('--json', 'Emit machine-readable JSON')

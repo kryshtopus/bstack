@@ -7,3 +7,6 @@ coverage/
 *.log
 output/
 *.tgz
+.vscode/
+.idea/
+*.iml

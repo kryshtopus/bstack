@@ -33,13 +33,13 @@ for (const filePath of packagedFiles) {
   }
 }
 
-const localPrefix = await mkdtemp(path.join(os.tmpdir(), 'bsaa-local-install-'));
-const globalPrefix = await mkdtemp(path.join(os.tmpdir(), 'bsaa-global-install-'));
+const localPrefix = await mkdtemp(path.join(os.tmpdir(), 'bstack-local-install-'));
+const globalPrefix = await mkdtemp(path.join(os.tmpdir(), 'bstack-global-install-'));
 
 try {
   await writeFile(
     path.join(localPrefix, 'package.json'),
-    JSON.stringify({ name: 'bsaa-local-install-check', private: true }, null, 2),
+    JSON.stringify({ name: 'bstack-local-install-check', private: true }, null, 2),
   );
 
   execFileSync('npm', ['install', tarballPath], {
@@ -65,7 +65,7 @@ try {
     stdio: 'inherit',
   });
 
-  const binPath = path.join(globalPrefix, 'bin', 'bsaa');
+  const binPath = path.join(globalPrefix, 'bin', 'bstack');
   execFileSync(binPath, ['--help'], {
     cwd,
     stdio: 'inherit',
