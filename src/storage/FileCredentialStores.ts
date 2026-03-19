@@ -21,7 +21,7 @@ export class EncryptedFileCredentialStore implements CredentialStore {
     const masterKey = options?.masterKey;
     if (!masterKey) {
       throw new Error(
-        'Encrypted file storage requires a master key. Set BSAA_MASTER_KEY or provide one interactively.',
+        'Encrypted file storage requires a master key. Set BSTACK_MASTER_KEY or provide one interactively.',
       );
     }
 
@@ -38,7 +38,7 @@ export class EncryptedFileCredentialStore implements CredentialStore {
     const masterKey = options?.masterKey;
     if (!masterKey) {
       throw new Error(
-        'Stored session is encrypted. Set BSAA_MASTER_KEY or login again with a different storage strategy.',
+        'Stored session is encrypted. Set BSTACK_MASTER_KEY or login again with a different storage strategy.',
       );
     }
 

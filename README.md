@@ -2,11 +2,11 @@
 
 BrowserStack App Automate SDK and CLI for uploads, builds, sessions, and media workflows.
 
-[![Build](https://img.shields.io/github/actions/workflow/status/kryshtopus/browserstack-cli-client/build.yml?branch=main&style=flat-square&label=build)](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/build.yml)
-[![Tests](https://img.shields.io/github/actions/workflow/status/kryshtopus/browserstack-cli-client/unit-tests.yml?branch=main&style=flat-square&label=tests)](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/unit-tests.yml)
-[![Version](https://img.shields.io/github/package-json/v/kryshtopus/browserstack-cli-client?style=flat-square)](https://github.com/kryshtopus/browserstack-cli-client/blob/main/package.json)
-[![GitHub Stars](https://img.shields.io/github/stars/kryshtopus/browserstack-cli-client?style=flat-square)](https://github.com/kryshtopus/browserstack-cli-client/stargazers)
-[![License](https://img.shields.io/github/license/kryshtopus/browserstack-cli-client?style=flat-square)](https://github.com/kryshtopus/browserstack-cli-client/blob/main/LICENSE)
+[![Build](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/build.yml)
+[![Tests](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/unit-tests.yml/badge.svg?branch=main)](https://github.com/kryshtopus/browserstack-cli-client/actions/workflows/unit-tests.yml)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)](https://github.com/kryshtopus/browserstack-cli-client/blob/main/package.json)
+[![GitHub Stars](https://img.shields.io/badge/stars-view%20on%20GitHub-181717?style=flat-square&logo=github)](https://github.com/kryshtopus/browserstack-cli-client/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/kryshtopus/browserstack-cli-client/blob/main/LICENSE)
 
 `@kryshtopus/bstack` is a CLI-first BrowserStack App Automate package that ships both:
 
@@ -80,8 +80,8 @@ import {
 
 const registry = new EndpointRegistry(endpointDefinitions);
 const http = new BrowserStackHttpClient({
-  username: process.env.BSAA_USERNAME!,
-  accessKey: process.env.BSAA_ACCESS_KEY!,
+  username: process.env.BSTACK_USERNAME!,
+  accessKey: process.env.BSTACK_ACCESS_KEY!,
   storageStrategy: 'plain-file',
   createdAt: new Date().toISOString(),
   updatedAt: new Date().toISOString(),
@@ -177,16 +177,16 @@ bstack auth login
 Non-interactive:
 
 ```bash
-bstack auth login --username "$BSAA_USERNAME" --access-key "$BSAA_ACCESS_KEY"
+bstack auth login --username "$BSTACK_USERNAME" --access-key "$BSTACK_ACCESS_KEY"
 ```
 
 Encrypted local storage:
 
 ```bash
-export BSAA_MASTER_KEY='choose-a-strong-local-master-key'
+export BSTACK_MASTER_KEY='choose-a-strong-local-master-key'
 bstack auth login \
-  --username "$BSAA_USERNAME" \
-  --access-key "$BSAA_ACCESS_KEY" \
+  --username "$BSTACK_USERNAME" \
+  --access-key "$BSTACK_ACCESS_KEY" \
   --storage encrypted-file
 ```
 
@@ -194,8 +194,8 @@ Plain-text storage is explicit only:
 
 ```bash
 bstack auth login \
-  --username "$BSAA_USERNAME" \
-  --access-key "$BSAA_ACCESS_KEY" \
+  --username "$BSTACK_USERNAME" \
+  --access-key "$BSTACK_ACCESS_KEY" \
   --storage plain-file \
   --allow-plain-storage
 ```
@@ -206,11 +206,11 @@ See [.env.example](./.env.example).
 
 Supported variables:
 
-- `BSAA_USERNAME`
-- `BSAA_ACCESS_KEY`
-- `BSAA_MASTER_KEY`
-- `BSAA_BASE_URL`
-- `BSAA_HTTP_TIMEOUT_MS`
+- `BSTACK_USERNAME`
+- `BSTACK_ACCESS_KEY`
+- `BSTACK_MASTER_KEY`
+- `BSTACK_BASE_URL`
+- `BSTACK_HTTP_TIMEOUT_MS`
 
 ## Credential and Session Storage
 
@@ -313,7 +313,7 @@ bstack auth login --storage encrypted-file --master-key '<key>'
 
 ### Encrypted session cannot be decrypted
 
-Set the same `BSAA_MASTER_KEY` used when the session was created, or log in again and choose another storage backend.
+Set the same `BSTACK_MASTER_KEY` used when the session was created, or log in again and choose another storage backend.
 
 ### Unsupported operation
 

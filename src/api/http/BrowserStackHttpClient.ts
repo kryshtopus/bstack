@@ -39,7 +39,7 @@ export class BrowserStackHttpClient {
     this.timeoutMs = options.timeoutMs ?? DEFAULT_HTTP_TIMEOUT_MS;
     this.retryAttempts = options.retryAttempts ?? DEFAULT_RETRY_ATTEMPTS;
     this.client = axios.create({
-      baseURL: options.baseUrl ?? process.env.BSAA_BASE_URL ?? DEFAULT_BASE_URL,
+      baseURL: options.baseUrl ?? process.env.BSTACK_BASE_URL ?? DEFAULT_BASE_URL,
       timeout: this.timeoutMs,
       auth: {
         username: session.username,

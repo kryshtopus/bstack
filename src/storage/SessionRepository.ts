@@ -45,7 +45,7 @@ export class SessionRepository {
     if (preferred === 'encrypted-file') {
       if (!options?.masterKey) {
         throw new Error(
-          'Encrypted-file storage requires a master key. Set BSAA_MASTER_KEY or choose a different storage strategy.',
+          'Encrypted-file storage requires a master key. Set BSTACK_MASTER_KEY or choose a different storage strategy.',
         );
       }
 
@@ -75,7 +75,7 @@ export class SessionRepository {
     }
 
     throw new Error(
-      'Auto storage could not resolve a secure backend. Set BSAA_MASTER_KEY for encrypted-file storage, or use --allow-plain-storage for plain-file fallback.',
+      'Auto storage could not resolve a secure backend. Set BSTACK_MASTER_KEY for encrypted-file storage, or use --allow-plain-storage for plain-file fallback.',
     );
   }
 

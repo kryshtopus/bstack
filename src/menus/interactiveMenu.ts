@@ -149,7 +149,7 @@ async function runWelcomeScreen(runtime: CommandRuntime): Promise<'exit' | 'conn
       {
         name: 'Use environment variables',
         value: 'env',
-        description: 'Connect via BSAA_USERNAME and BSAA_ACCESS_KEY without saving credentials.',
+        description: 'Connect via BSTACK_USERNAME and BSTACK_ACCESS_KEY without saving credentials.',
       },
       {
         name: 'Help',
@@ -178,8 +178,8 @@ async function runWelcomeScreen(runtime: CommandRuntime): Promise<'exit' | 'conn
     runtime.output.title('Use environment variables', 'Connect without storing credentials locally.');
     runtime.output.lines([
       'Set these in your shell before launching the CLI:',
-      'export BSAA_USERNAME="your-browserstack-username"',
-      'export BSAA_ACCESS_KEY="your-browserstack-access-key"',
+      'export BSTACK_USERNAME="your-browserstack-username"',
+      'export BSTACK_ACCESS_KEY="your-browserstack-access-key"',
       '',
       'Then restart this interactive mode or choose Refresh account status from Settings later.',
     ]);

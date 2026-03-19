@@ -52,8 +52,8 @@ export class AuthService {
     session: StoredSession | null;
     source?: AuthSource;
   }> {
-    const envUsername = process.env.BSAA_USERNAME;
-    const envAccessKey = process.env.BSAA_ACCESS_KEY;
+    const envUsername = process.env.BSTACK_USERNAME;
+    const envAccessKey = process.env.BSTACK_ACCESS_KEY;
 
     if (envUsername && envAccessKey) {
       return {
@@ -77,8 +77,8 @@ export class AuthService {
 
   public async status(): Promise<Awaited<ReturnType<SessionRepository['getStatus']>>> {
     const stored = await this.sessionRepository.getStatus();
-    const envUsername = process.env.BSAA_USERNAME;
-    const envAccessKey = process.env.BSAA_ACCESS_KEY;
+    const envUsername = process.env.BSTACK_USERNAME;
+    const envAccessKey = process.env.BSTACK_ACCESS_KEY;
 
     if (envUsername && envAccessKey) {
       return {
