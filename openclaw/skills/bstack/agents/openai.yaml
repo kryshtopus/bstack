@@ -1,0 +1,4 @@
+interface:
+  display_name: "bstack"
+  short_description: "Operate the bstack BrowserStack CLI and SDK"
+  default_prompt: "Use the bstack skill to work with the @kryshtop/bstack package, its CLI, docs, env variables, and publishing workflows."
